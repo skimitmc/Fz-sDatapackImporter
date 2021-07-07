@@ -96,10 +96,10 @@ class fzsDatapackImporter():
         return self.__sync(server, "custom", {"play_one_minute"}, "activation", "总在线时间(h)", True, False)
         
     def syncDamageTaken(self, server):
-        return self.__sync(server, "custom", {"damage_taken"}, "damageTaken", "群p抖M", False, True)
+        return self.__sync(server, "custom", {"damage_taken"}, "damageTaken", "总受伤害量", False, True)
         
     def syncDeathCounter(self, server):
-        return self.__sync(server, "custom", {"deaths"}, "deathCounter", "全部木大")
+        return self.__sync(server, "custom", {"deaths"}, "deathCounter", "总死亡数")
         
     def syncDigCounter(self, server):
         return self.__sync(server, "used", {"diamond_axe", "diamond_pickaxe", "diamond_shovel", "diamond_hoe", "iron_axe", "iron_axe", "iron_axe", "iron_axe", "stone_axe", "stone_pickaxe", "stone_shovel", "stone_hoe", "wooden_axe", "wooden_pickaxe", "wooden_shovel", "wooden_hoe", "golden_axe", "golden_pickaxe", "golden_shovel", "golden_hoe", "netherite_axe", "netherite_pickaxe", "netherite_shovel", "netherite_hoe", "shears" }, "digCounter", "总挖掘量")
@@ -111,7 +111,7 @@ class fzsDatapackImporter():
         return self.__sync(server, "custom", {"mob_kills', 'player_kills"}, "killCounter", "总击杀数")
         
     def syncTradingCounter(self, server):
-        return self.__sync(server, "custom", {"traded_with_villager"}, "tradingCounter", "总交♂易数")
+        return self.__sync(server, "custom", {"traded_with_villager"}, "tradingCounter", "总交易数")
         
 def on_info(server, info):
     p = fzsDatapackImporter()
@@ -142,9 +142,9 @@ def on_info(server, info):
                     
                 if((arglen == 3 and args[2] == "damage") or arglen == 2):
                     if (p.syncDamageTaken(server)):
-                        server.reply(info, "§aFDI §7>> §b抖M名单同步完成!")
+                        server.reply(info, "§aFDI §7>> §b受伤害名单同步完成!")
                     else:
-                        server.reply(info, "§aFDI §7>> §c抖M名单同步失败!")
+                        server.reply(info, "§aFDI §7>> §c受伤害名单同步失败!")
                     time.sleep(1)
                 if((arglen == 3 and args[2] == "death") or arglen == 2):
                     if (p.syncDeathCounter(server)):
@@ -171,9 +171,9 @@ def on_info(server, info):
                     time.sleep(1)
                 if((arglen == 3 and args[2] == "trading") or arglen == 2):
                     if (p.syncTradingCounter(server)):
-                        server.reply(info, "§aFDI §7>> §bPY榜同步完成!")
+                        server.reply(info, "§aFDI §7>> §b交易榜同步完成!")
                     else:
-                        server.reply(info, "§aFDI §7>> §cPY榜同步失败!")
+                        server.reply(info, "§aFDI §7>> §c交易榜同步失败!")
                     time.sleep(1)
         else:
             server.reply(info, "§aFDI §7>> §b未知指令, 请输入 !!fdi help 来获取帮助!")

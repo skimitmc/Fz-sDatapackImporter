@@ -1,5 +1,5 @@
 # Fz-sDatapackImporter
-一个用于将stats数据同步到由 [哈尔威](https://github.com/Harveykang/)制作的[Fz-sDatapack](https://github.com/Harveykang/FZ-sDataPack) 记分版的 MCDR 插件
+一个用于将stats数据同步到由 [哈尔威](https://gitee.com/harvey-husky)制作的[Fz-sDatapack无网络用语版](https://gitee.com/harvey-husky/FZ-sDatapack/tree/2.1-no-memes/) 记分版的 MCDR 插件
 适用于未在开服时未及时安装 [Fz-sDatapack](https://github.com/Harveykang/FZ-sDataPack) 但希望能够同步数据的场景
 
 本插件支持 从 usercache.json 或 whitelist.json 中载入玩家 uuid
